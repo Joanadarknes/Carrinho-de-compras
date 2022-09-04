@@ -13,27 +13,29 @@ session_start();
     <div class="menu">
         <img src="imgs/logo.png" />
         <ul id="nav">
+            <li><img href="./index.php" src="imgs/frutas.png" /><a href="./index.php">Frutas</a1>
+                    </l>
+
+            <li><img src="imgs/talheres.png" /><a href="#">Diversos</a></li>
             <div class="selecionado">
-                <li><img src="imgs/frutas.png" />
-                    <a1 href="#">Frutas</a1>
+                <li><img src="imgs/bebidas.png" />
+                    <a1 href="#">Bebidas</a1>
                 </li>
             </div>
-            <li><img src="imgs/talheres.png" /><a href="#">Diversos</a></li>
-            <li href="./index2.php"><img src="imgs/bebidas.png" /><a href="./index2.php">Bebidas</a></li>
             <li><img src="imgs/produtos-higiene.png" /><a href="#">Limpeza</a></li>
         </ul>
     </div>
-    <h3 class="title-frutas">Frutas</h3>
+    <h3 class="title-frutas">Bebidas</h3>
     <div class="itens-container">
         <?php
         //ARRAY MULTIDIMENCIONAL
         $itens = array(
-            ['image' => 'imgs/item1.png', 'nome' => 'Banana', 'preco' => '6.10'],
-            ['image' => 'imgs/item2.png', 'nome' => 'Maça', 'preco' => '4.20'],
-            ['image' => 'imgs/item3.png', 'nome' => 'Mamão', 'preco' => '2.90'],
-            ['image' => 'imgs/item4.png', 'nome' => 'Morango', 'preco' => '9.70'],
-            ['image' => 'imgs/item5.png', 'nome' => 'Goiaba', 'preco' => '5.00'],
-            ['image' => 'imgs/item6.png', 'nome' => 'Melancia', 'preco' => '7.40']
+            ['image' => 'imgs/tangmorango.webp', 'nome' => 'Tang', 'preco' => '1.10'],
+            ['image' => 'imgs/taquery.webp', 'nome' => 'Tanqueray ', 'preco' => '130.90'],
+            ['image' => 'imgs/vodka.webp', 'nome' => 'Beefeater', 'preco' => '140.00'],
+            ['image' => 'imgs/ice.webp', 'nome' => 'ice', 'preco' => '4.47'],
+            ['image' => 'imgs/chivas.webp', 'nome' => 'Chivas Regal', 'preco' => '120.49'],
+            ['image' => 'imgs/black.webp', 'nome' => 'Black White', 'preco' => '62.90']
         );
 
         foreach ($itens as $key => $value) {
@@ -82,11 +84,11 @@ session_start();
                 <p>
             </div>
             <div class="produtos">
-        
+
                 <?php
-              
+
                 //LISTANDO OS ITENS ADICIONADOS
-             
+
                 foreach ($_SESSION['carrinho'] as $key => $value) {
                 ?>
 
@@ -107,33 +109,32 @@ session_start();
                 ?>
 
                 <!-- <?php
-                $idProduto = 0;
-                //REMOVER DO CARRINHO
-                if (isset($_GET['remover'][$idProduto])) {
-                    $idProduto = (int) $_GET['remover'];
-                    if (isset($_SESSION['carrinho'][$idProduto])) {
-                        unset($_SESSION['carrinho'][$idProduto]);
-                    }
-                }
+                        $idProduto = 0;
+                        //REMOVER DO CARRINHO
+                        if (isset($_GET['remover'][$idProduto])) {
+                            $idProduto = (int) $_GET['remover'];
+                            if (isset($_SESSION['carrinho'][$idProduto])) {
+                                unset($_SESSION['carrinho'][$idProduto]);
+                            }
+                        }
 
-                //esvaziar carrinho 
-                if ($_GET['finalizar']){
-                   unset($_SESSION['carrinho']);
+                        //esvaziar carrinho 
+                        if ($_GET['finalizar']) {
+                            unset($_SESSION['carrinho']);
+                        }
 
-                }
-
-                ?> -->
+                        ?> -->
 
 
             </div>
             <div class="total">
                 <h2>Subtotal<p>R$
-           
-                      <?php
-                        
+
+                        <?php
+
                         //SUBTOTAL DA COMPRA
                         $sub = '0';
-                        $total = '0';  
+                        $total = '0';
                         foreach ($_SESSION['carrinho'] as $key => $value) {
                             $sub += $value['preco'] * $value['quantidade'];
                         }
@@ -142,9 +143,9 @@ session_start();
                 </h2>
 
                 <h2>Total<p1>R$
-              
+
                         <?php
-                           
+
                         //TOTAL DA COMPRA
                         foreach ($_SESSION['carrinho'] as $key => $value) {
                             $total += $value['preco'] * $value['quantidade'];
