@@ -165,6 +165,7 @@ body{
     line-height: 27px;
     font-weight:bold;
     text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     background: linear-gradient(to right,  #f7506d, #f98046);
     border-radius: 2px;
   }
@@ -186,6 +187,7 @@ body{
   }
   
   .produto a{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     font-weight: bolder;
     margin-top: 17.7%;
     cursor: pointer;

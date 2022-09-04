@@ -23,10 +23,6 @@ session_start();
             <li><img src="imgs/produtos-higiene.png" /><a href="#">Limpeza</a></li>
         </ul>
     </div>
-    <div class="title">
-        <h2>Mercado</h2>
-        <img src="imgs/carrinho.png" />
-    </div>
     <h3 class="title-frutas">Frutas</h3>
     <div class="itens-container">
         <?php
@@ -53,8 +49,7 @@ session_start();
         <?php
         }
         ?>
-$$idProduto = 'idProduto';
-$$value = 'value';
+
 
         <?php
         //ADD CARRINHO
@@ -87,10 +82,14 @@ $$value = 'value';
                 <p>
             </div>
             <div class="produtos">
+        
                 <?php
+              
                 //LISTANDO OS ITENS ADICIONADOS
+             
                 foreach ($_SESSION['carrinho'] as $key => $value) {
                 ?>
+
                     <div class="itens">
                         <a href="?remover=<?php echo $key ?>"><img src="imgs/lixo.png" /></a>
                         <div class="nome_preco">
@@ -142,8 +141,9 @@ $$value = 'value';
                 </h2>
 
                 <h2>Total<p1>R$
-           
+              
                         <?php
+                           
                         //TOTAL DA COMPRA
                         foreach ($_SESSION['carrinho'] as $key => $value) {
                             $total += $value['preco'] * $value['quantidade'];
