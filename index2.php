@@ -22,7 +22,7 @@ session_start();
                     <a1 href="#">Bebidas</a1>
                 </li>
             </div>
-            <li><img src="imgs/produtos-higiene.png" /><a href="#">Limpeza</a></li>
+            <li><img src="imgs/produtos-higiene.png" /><a href="./index4.php">Limpeza</a></li>
         </ul>
     </div>
     <h3 class="title-frutas">Bebidas</h3>
