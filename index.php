@@ -107,6 +107,7 @@ session_start();
                 ?>
 
                 <!-- <?php
+                $idProduto = 0;
                 //REMOVER DO CARRINHO
                 if (isset($_GET['remover'][$idProduto])) {
                     $idProduto = (int) $_GET['remover'];
